@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 07993f726d159b64f9694b1b70eac589
+guid: ee45c5a5f7ec3374bb3353b5a8e43275
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2987758286643086788
-    second: ground-backgroung_0
+      213: 4760809886307718974
+    second: sling-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ground-backgroung_0
+      name: sling-1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 320
+        width: 70
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3ab8e90ba95986d0800000000000000
-      internalID: -2987758286643086788
+      spriteID: e371a842e5bc11240800000000000000
+      internalID: 4760809886307718974
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ground-backgroung_0: -2987758286643086788
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
