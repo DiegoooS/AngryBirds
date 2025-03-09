@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         Vector3 diff = transform.position - slingHookTransform.position;
         diff.Normalize();
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ + 90f);
+        transform.rotation = Quaternion.Euler(0, 0, rotZ + 180f);
     }
 
     private void SetLinePosition() => lineRenderer.SetPosition(0, transform.position);
