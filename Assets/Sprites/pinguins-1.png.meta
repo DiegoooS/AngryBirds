@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 706142f36906097479de0c1c9c7e1a27
+guid: 9911981552f2d7542b9577f3fea37a70
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2602099108580761504
-    second: pig-1_0
+      213: -8958892084782947369
+    second: pinguins-1_0
+  - first:
+      213: -5402574368326751440
+    second: pinguins-1_1
+  - first:
+      213: 7051014872335091489
+    second: pinguins-1_2
+  - first:
+      213: -6824607010390941107
+    second: pinguins-1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pig-1_0
+      name: pinguins-1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 550
-        height: 640
+        width: 124
+        height: 148
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0af115d4a538c1420800000000000000
-      internalID: 2602099108580761504
+      spriteID: 7d324797d1f9ba380800000000000000
+      internalID: -8958892084782947369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguins-1_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 127
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03be04f6c333605b0800000000000000
+      internalID: -5402574368326751440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguins-1_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 150
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12787832bac3ad160800000000000000
+      internalID: 7051014872335091489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguins-1_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 138
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42e10615102a41a0800000000000000
+      internalID: -6824607010390941107
       vertices: []
       indices: 
       edges: []
@@ -134,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pig-1_0: 2602099108580761504
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

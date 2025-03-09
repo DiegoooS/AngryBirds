@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 706142f36906097479de0c1c9c7e1a27
+guid: 07993f726d159b64f9694b1b70eac589
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2602099108580761504
-    second: pig-1_0
+      213: -2987758286643086788
+    second: ground-backgroung_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pig-1_0
+      name: ground-backgroung_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 550
-        height: 640
+        width: 200
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0af115d4a538c1420800000000000000
-      internalID: 2602099108580761504
+      spriteID: c3ab8e90ba95986d0800000000000000
+      internalID: -2987758286643086788
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pig-1_0: 2602099108580761504
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
