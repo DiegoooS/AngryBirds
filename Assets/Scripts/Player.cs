@@ -5,12 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Transform slingHookTransform;
+    [SerializeField] private float shootMultiplier = 5f;
 
     private LineRenderer lineRenderer;
     private Camera cam;
     private Vector3 mousePos;
+    private Rigidbody2D rb;
 
-    private void Awake() => SetLineRenderer();
+    private void Awake()
+    {
+        SetLineRenderer();
+        SetRigidBody();
+    }
+
+    private void SetRigidBody() => rb = GetComponent<Rigidbody2D>();
 
     private void SetLineRenderer() => lineRenderer = GetComponent<LineRenderer>();
 
@@ -53,8 +61,20 @@ public class Player : MonoBehaviour
         transform.position = mousePos;
     }
 
-    private void OnMouseUp() => HideLine();
-    
+    private void OnMouseUp()
+    {
+        HideLine();
+        ShootBird();
+    }
+
+    private void ShootBird()
+    {
+        Vector3 shootDirection = slingHookTransform.position - transform.position;
+        float shootForce = shootDirection.magnitude * shootMultiplier;
+        Debug.Log(shootDirection * shootForce);
+        rb.AddForce( shootDirection * shootForce, ForceMode2D.Impulse);
+    }
+
     private void HideLine()
     {
         lineRenderer.SetPosition(0, slingHookTransform.position);

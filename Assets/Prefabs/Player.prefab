@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8950606328185215671}
   - component: {fileID: 8067231756928795068}
   m_Layer: 0
-  m_Name: PlayerPinguin
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6955431245867113955, guid: 2bcac06dd5a8dd644ac68716168b259a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,8 +186,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.086112976
-        value: 0.07500076
+        time: 0.097221375
+        value: 0.031253815
         inSlope: 0
         outSlope: 0
         tangentMode: 0
