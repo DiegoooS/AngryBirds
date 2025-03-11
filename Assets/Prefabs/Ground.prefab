@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1697308932479344195}
   - component: {fileID: 5377786364902614169}
   - component: {fileID: 2519637037154483154}
+  - component: {fileID: 8118004841553922902}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2362722484597969459}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: -5.63, z: 0}
-  m_LocalScale: {x: 9.116873, y: 1, z: 1}
+  m_LocalScale: {x: 9.019322, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2987758286643086788, guid: 07993f726d159b64f9694b1b70eac589, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,3 +135,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 3.2}
   m_EdgeRadius: 0
+--- !u!114 &8118004841553922902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362722484597969459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fe927e8821a0d48964ee0459d03a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

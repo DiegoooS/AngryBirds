@@ -6,11 +6,13 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Transform slingHookTransform;
     [SerializeField] private float shootMultiplier = 5f;
+    [SerializeField] private Transform playerSpawn;
 
     private LineRenderer lineRenderer;
     private Camera cam;
     private Vector3 mousePos;
     private Rigidbody2D rb;
+    private bool playerShooted = false;
 
     private void Awake()
     {
@@ -64,19 +66,39 @@ public class Player : MonoBehaviour
     private void OnMouseUp()
     {
         HideLine();
-        ShootBird();
+        ShootPlayer();
     }
 
-    private void ShootBird()
+    private void ShootPlayer()
     {
         Vector3 shootDirection = slingHookTransform.position - transform.position;
         float shootForce = shootDirection.magnitude * shootMultiplier;
-        Debug.Log(shootDirection * shootForce);
         rb.AddForce( shootDirection * shootForce, ForceMode2D.Impulse);
+        playerShooted = true;
     }
 
     private void HideLine()
     {
         lineRenderer.SetPosition(0, slingHookTransform.position);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            ResetPlayerPosition();
+        }
+    }
+
+    private void ResetPlayerPosition()
+    {
+        if (playerShooted)
+        {
+            transform.position = playerSpawn.position;
+            playerShooted = false;
+            CreateLineFromPlayerToSling();
+            rb.angularVelocity = 0f;
+            rb.linearVelocity = Vector3.zero;
+        }
     }
 }
