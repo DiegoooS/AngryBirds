@@ -7,7 +7,7 @@ public class Pig : MonoBehaviour
         if (collision.gameObject.GetComponent<Ground>())
         {
             PigsManager.Instance.ReducePigsInPlayOnLevel();
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

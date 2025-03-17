@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ResetPlayerPosition()
+    public void ResetPlayerPosition()
     {
         if (playerShooted)
         {

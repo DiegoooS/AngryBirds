@@ -8,10 +8,21 @@ public class SceneController : MonoBehaviour
 
     private int currentScene;
     private bool gameStarted = false;
+    private int levelsInTheGame;
 
     private void Awake()
     {
         SetInstance();
+    }
+
+    private void Start()
+    {
+        SetLevelsNumber();
+    }
+
+    private void SetLevelsNumber()
+    {
+        levelsInTheGame = SceneManager.sceneCountInBuildSettings;
     }
 
     private void SetInstance()
@@ -43,6 +54,10 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(currentScene);
         currentScene++;
-        SceneManager.LoadScene(currentScene, LoadSceneMode.Additive);
+
+        if (levelsInTheGame > currentScene)
+        {
+            SceneManager.LoadScene(currentScene, LoadSceneMode.Additive);
+        }
     }
 }

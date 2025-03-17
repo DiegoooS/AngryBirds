@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PigsManager : MonoBehaviour
@@ -6,6 +5,7 @@ public class PigsManager : MonoBehaviour
     public static PigsManager Instance {  get; private set; }
 
     private int pigsInPlayOnLevel;
+    private Player player;
 
     private void Awake()
     {
@@ -26,6 +26,12 @@ public class PigsManager : MonoBehaviour
         CountPigsInPlayOnLevel();
     }
 
+    private void SetPlayer()
+    {
+        player = FindAnyObjectByType<Player>();
+        Debug.Log(player.name);
+    }
+
     public void CountPigsInPlayOnLevel()
     {
         Debug.Log(transform.name);
@@ -36,10 +42,11 @@ public class PigsManager : MonoBehaviour
     public void ReducePigsInPlayOnLevel()
     {
         pigsInPlayOnLevel--;
-        Debug.Log(pigsInPlayOnLevel);
 
         if (pigsInPlayOnLevel <= 0)
         {
+            SetPlayer();
+            player.ResetPlayerPosition();
             SceneController.Instance.NextLevel();
         }
     }
