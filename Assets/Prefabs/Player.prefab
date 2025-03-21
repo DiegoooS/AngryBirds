@@ -105,8 +105,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_AngularDamping: 0
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slingHookTransform: {fileID: 0}
+  shootMultiplier: 1
+  playerSpawn: {fileID: 0}
 --- !u!120 &8950606328185215671
 LineRenderer:
   serializedVersion: 2

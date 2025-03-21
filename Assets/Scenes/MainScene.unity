@@ -270,17 +270,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4152489572494345695, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
-      propertyPath: shootForce
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4152489572494345695, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 2039708283}
-    - target: {fileID: 4152489572494345695, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
-      propertyPath: shootMultiplier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4152489572494345695, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
       propertyPath: slingHookTransform
       value: 
@@ -323,18 +315,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360981579158232009, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8682341780468761676, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8682341780468761676, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8682341780468761676, guid: fbf5007ed7a68bd4c896789c39595f0c, type: 3}
-      propertyPath: m_AngularDamping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

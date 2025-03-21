@@ -10,20 +10,11 @@ public class SceneController : MonoBehaviour
     private bool gameStarted = false;
     private int levelsInTheGame;
 
-    private void Awake()
-    {
-        SetInstance();
-    }
+    private void Awake() => SetInstance();
 
-    private void Start()
-    {
-        SetLevelsNumber();
-    }
+    private void Start() => SetLevelsNumber();
 
-    private void SetLevelsNumber()
-    {
-        levelsInTheGame = SceneManager.sceneCountInBuildSettings;
-    }
+    private void SetLevelsNumber() => levelsInTheGame = SceneManager.sceneCountInBuildSettings;
 
     private void SetInstance()
     {
@@ -34,10 +25,7 @@ public class SceneController : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
-    {
-        StartGame();
-    }
+    private void Update() => StartGame();
 
     private void StartGame()
     {
@@ -50,14 +38,23 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void EndGame()
+    {
+        SceneManager.LoadScene(0);
+        gameStarted = false;
+        Destroy(gameObject);
+    }
+
     public void NextLevel()
     {
         SceneManager.UnloadSceneAsync(currentScene);
         currentScene++;
-
         if (levelsInTheGame > currentScene)
         {
             SceneManager.LoadScene(currentScene, LoadSceneMode.Additive);
+            LifeManager.Instance.SetLifesToMax();
+            return;
         }
+        EndGame();
     }
 }

@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
 
     private void ShootPlayer()
     {
+        LifeManager.Instance.ReduceLife();
         Vector3 shootDirection = slingHookTransform.position - transform.position;
         float shootForce = shootDirection.magnitude * shootMultiplier;
         rb.AddForce( shootDirection * shootForce, ForceMode2D.Impulse);
@@ -96,7 +97,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator ResetPlayerPositionAfterTime()
     {
-        Debug.Log("Counting");
         yield return new WaitForSeconds(5f);
         ResetPlayerPosition();
         resetPlayerPositionCoroutine = null;
@@ -106,6 +106,8 @@ public class Player : MonoBehaviour
     {
         if (playerShooted)
         {
+            LifeManager.Instance.CheckIfGameOver();
+
             transform.position = playerSpawn.position;
             playerShooted = false;
             CreateLineFromPlayerToSling();
