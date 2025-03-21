@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     private Vector3 mousePos;
     private Rigidbody2D rb;
     private bool playerShooted = false;
+    IEnumerator resetPlayerPositionCoroutine;
 
     private void Awake()
     {
@@ -75,6 +77,8 @@ public class Player : MonoBehaviour
         float shootForce = shootDirection.magnitude * shootMultiplier;
         rb.AddForce( shootDirection * shootForce, ForceMode2D.Impulse);
         playerShooted = true;
+        resetPlayerPositionCoroutine = ResetPlayerPositionAfterTime();
+        StartCoroutine(resetPlayerPositionCoroutine);
     }
 
     private void HideLine()
@@ -90,6 +94,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    private IEnumerator ResetPlayerPositionAfterTime()
+    {
+        Debug.Log("Counting");
+        yield return new WaitForSeconds(5f);
+        ResetPlayerPosition();
+        resetPlayerPositionCoroutine = null;
+    }
+
     public void ResetPlayerPosition()
     {
         if (playerShooted)
@@ -99,6 +111,10 @@ public class Player : MonoBehaviour
             CreateLineFromPlayerToSling();
             rb.angularVelocity = 0f;
             rb.linearVelocity = Vector3.zero;
+            RotatePlayer();
+
+            if (resetPlayerPositionCoroutine == null) return;
+            StopCoroutine(resetPlayerPositionCoroutine);
         }
     }
 }

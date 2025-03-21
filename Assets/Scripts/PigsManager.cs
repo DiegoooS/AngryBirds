@@ -29,14 +29,11 @@ public class PigsManager : MonoBehaviour
     private void SetPlayer()
     {
         player = FindAnyObjectByType<Player>();
-        Debug.Log(player.name);
     }
 
     public void CountPigsInPlayOnLevel()
     {
-        Debug.Log(transform.name);
         pigsInPlayOnLevel = transform.childCount;
-        Debug.Log(pigsInPlayOnLevel);
     }
 
     public void ReducePigsInPlayOnLevel()
