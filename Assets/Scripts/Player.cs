@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
 
     private void ShootPlayer()
     {
-        //LifeManager.Instance.ReduceLife();
+        LifeManager.Instance.ReduceLife();
 
         Vector3 shootDirection = slingHookTransform.position - transform.position;
         float shootForce = shootDirection.magnitude * shootMultiplier;
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
     {
         if (playerShooted)
         {
-            //LifeManager.Instance.CheckIfGameOver();
+            LifeManager.Instance.CheckIfGameOver();
 
             transform.position = playerSpawn.position;
             playerShooted = false;
