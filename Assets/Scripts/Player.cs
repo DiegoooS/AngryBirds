@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform slingHookTransform;
     [SerializeField] private float shootMultiplier = 5f;
     [SerializeField] private Transform playerSpawn;
+    [SerializeField] private float minSlingStretchX = 5f;
+    [SerializeField] private float minSlingStretchY = 2f;
+    [SerializeField] private float maxSlingStretchY = 5f;
 
     private LineRenderer lineRenderer;
     private Camera cam;
@@ -60,7 +64,16 @@ public class Player : MonoBehaviour
 
     private void SetPlayerToMousePosition()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.x = Math.Clamp(
+            cam.ScreenToWorldPoint(Input.mousePosition).x, 
+            playerSpawn.position.x - minSlingStretchX, 
+            playerSpawn.position.x
+        );
+        mousePos.y = Math.Clamp(
+            cam.ScreenToWorldPoint(Input.mousePosition).y,
+            playerSpawn.position.y - minSlingStretchY,
+            playerSpawn.position.y + maxSlingStretchY
+        );
         mousePos.z = 0f;
         transform.position = mousePos;
     }
@@ -73,7 +86,8 @@ public class Player : MonoBehaviour
 
     private void ShootPlayer()
     {
-        LifeManager.Instance.ReduceLife();
+        //LifeManager.Instance.ReduceLife();
+
         Vector3 shootDirection = slingHookTransform.position - transform.position;
         float shootForce = shootDirection.magnitude * shootMultiplier;
         rb.AddForce( shootDirection * shootForce, ForceMode2D.Impulse);
@@ -106,7 +120,7 @@ public class Player : MonoBehaviour
     {
         if (playerShooted)
         {
-            LifeManager.Instance.CheckIfGameOver();
+            //LifeManager.Instance.CheckIfGameOver();
 
             transform.position = playerSpawn.position;
             playerShooted = false;
