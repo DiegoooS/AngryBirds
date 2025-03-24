@@ -7,10 +7,7 @@ public class PigsManager : MonoBehaviour
     private int pigsInPlayOnLevel;
     private Player player;
 
-    private void Awake()
-    {
-        SetInstance();
-    }
+    private void Awake() => SetInstance();
 
     private void SetInstance()
     {
@@ -21,20 +18,11 @@ public class PigsManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        CountPigsInPlayOnLevel();
-    }
+    private void Start() => CountPigsInPlayOnLevel();
 
-    private void SetPlayer()
-    {
-        player = FindAnyObjectByType<Player>();
-    }
+    private void FindPlayerObjectOnScene() => player = FindAnyObjectByType<Player>();
 
-    public void CountPigsInPlayOnLevel()
-    {
-        pigsInPlayOnLevel = transform.childCount;
-    }
+    public void CountPigsInPlayOnLevel() => pigsInPlayOnLevel = transform.childCount;
 
     public void ReducePigsInPlayOnLevel()
     {
@@ -42,9 +30,14 @@ public class PigsManager : MonoBehaviour
 
         if (pigsInPlayOnLevel <= 0)
         {
-            SetPlayer();
-            player.ResetPlayerPosition();
-            SceneController.Instance.NextLevel();
+            ActivateNextLevel();
         }
+    }
+
+    private void ActivateNextLevel()
+    {
+        FindPlayerObjectOnScene();
+        SceneController.Instance.NextLevel();
+        player.ResetPlayerPosition();
     }
 }

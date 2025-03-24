@@ -52,7 +52,7 @@ public class SceneController : MonoBehaviour
         if (levelsInTheGame > currentScene)
         {
             SceneManager.LoadScene(currentScene, LoadSceneMode.Additive);
-            LifeManager.Instance.SetLifesToMax();
+            LifeManager.Instance?.SetLifesToMax();
             return;
         }
         EndGame();

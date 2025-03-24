@@ -5,7 +5,7 @@ public class LifeManager : MonoBehaviour
 {
     public static LifeManager Instance;
     [SerializeField] int maxLifes = 5;
-    private int currentLifes;
+    public int CurrentLifes { get; private set; }
 
     private void Awake() => SetInstance();
 
@@ -18,18 +18,21 @@ public class LifeManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start() => SetLifesToMax();
-
     public void ReduceLife()
     {
-        currentLifes--;
+        CurrentLifes--;
+        GameUIManager.Instance.SetLifeText(CurrentLifes.ToString());
     }
 
-    public void SetLifesToMax() => currentLifes = maxLifes;
+    public void SetLifesToMax()
+    {
+        CurrentLifes = maxLifes;
+        GameUIManager.Instance?.SetLifeText(CurrentLifes.ToString());
+    }
 
     public void CheckIfGameOver()
     {
-        if (currentLifes <= 0) SetGameOver();
+        if (CurrentLifes <= 0) SetGameOver();
     }
 
     private void SetGameOver() => SceneController.Instance.EndGame();

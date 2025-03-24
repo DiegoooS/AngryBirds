@@ -62,11 +62,13 @@ public class Player : MonoBehaviour
 
     private void SetLinePosition() => lineRenderer.SetPosition(0, transform.position);
 
-    private void SetPlayerToMousePosition()
+    private void SetPlayerToMousePosition() => transform.position = SetMousePositionInWorld();
+
+    private Vector3 SetMousePositionInWorld()
     {
         mousePos.x = Math.Clamp(
-            cam.ScreenToWorldPoint(Input.mousePosition).x, 
-            playerSpawn.position.x - minSlingStretchX, 
+            cam.ScreenToWorldPoint(Input.mousePosition).x,
+            playerSpawn.position.x - minSlingStretchX,
             playerSpawn.position.x
         );
         mousePos.y = Math.Clamp(
@@ -75,7 +77,8 @@ public class Player : MonoBehaviour
             playerSpawn.position.y + maxSlingStretchY
         );
         mousePos.z = 0f;
-        transform.position = mousePos;
+
+        return mousePos;
     }
 
     private void OnMouseUp()
@@ -125,12 +128,17 @@ public class Player : MonoBehaviour
             transform.position = playerSpawn.position;
             playerShooted = false;
             CreateLineFromPlayerToSling();
-            rb.angularVelocity = 0f;
-            rb.linearVelocity = Vector3.zero;
-            RotatePlayer();
+            ResetPlayerPhysic();
 
             if (resetPlayerPositionCoroutine == null) return;
             StopCoroutine(resetPlayerPositionCoroutine);
         }
+    }
+
+    private void ResetPlayerPhysic()
+    {
+        rb.angularVelocity = 0f;
+        rb.linearVelocity = Vector3.zero;
+        RotatePlayer();
     }
 }
